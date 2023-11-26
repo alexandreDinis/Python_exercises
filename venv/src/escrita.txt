@@ -1,0 +1,16 @@
+teste 1 
+
+meu resultado 
+
+O JOGO DUROU 1 HORA(S)
+
+resultado esperado
+
+O JOGO DUROU 24 HORA(S)
+
+possibilidades de retorno de uma HORA
+
+p1 = se os numeros forem iguais
+p2 = 
+
+

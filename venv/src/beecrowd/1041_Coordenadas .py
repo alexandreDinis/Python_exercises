@@ -1,7 +1,7 @@
 
 def coordinate(points):
 
-    if points[0] == 0 and points[1] ==0:
+    if points[0] == 0 and points[1] == 0:
         return print('Origem')
     elif points[0] < 0 and points[1]< 0:
         return print('Q3')
