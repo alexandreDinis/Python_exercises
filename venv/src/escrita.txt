@@ -1,16 +1,20 @@
-teste 1 
+1 hi mi = hi mi   ok
+ 
+2 hi = hf mi < mf ok
 
-meu resultado 
+0:38 0: 30 
 
-O JOGO DUROU 1 HORA(S)
+3 hi = hf  mi > mf ok
 
-resultado esperado
+0:45  0:59 
 
-O JOGO DUROU 24 HORA(S)
+4 hi > hf e mi = mf ok
 
-possibilidades de retorno de uma HORA
+5 hi < hf e mi = mf ok
 
-p1 = se os numeros forem iguais
-p2 = 
+6 hi > hf e mi < mf ok
 
+7 hi > hf e mi > mf ok
+
+8 hi < hf e mi < mf
 
