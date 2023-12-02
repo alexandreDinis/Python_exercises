@@ -9,7 +9,7 @@ def game_times(times):
     
     mi=mf=time=0
     
-    mi = times[1] + (times[0]*60)
+    mi = times[1] + (times[0]*60) 
     mf = times[3] + (times[2]*60)
 
     time = mf - mi
