@@ -1,6 +1,5 @@
-i = 1
+i = 0
 j = 7
-
 
 while i != 11:
     for l in range(3):
