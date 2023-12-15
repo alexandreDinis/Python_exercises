@@ -1,4 +1,4 @@
-tam = 12
+tam =5
 matriz = []
 
 for i in range(tam):
@@ -9,7 +9,7 @@ for i in range(tam):
 
 
 for l in range(tam):
-        for c in range(l+1,tam):
+        for c in range(tam -i -1):
             m = matriz[l][c]
             matriz[l][c] = "*"
        

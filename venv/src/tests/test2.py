@@ -1,20 +1,36 @@
-tam = 12
-matriz = []
+def construir_matriz(n):
+  """
+  Constrói uma matriz de escada de ordem n.
 
-for i in range(tam):
-    linha = []
-    for j in range(tam):
-        linha.append('1')
-    matriz.append(linha)
+  Args:
+    n: Ordem da matriz.
+
+  Returns:
+    Uma matriz de escada de ordem n.
+  """
+
+  matriz = [[0 for _ in range(n)] for _ in range(n)]
+
+  for i in range(n):
+    for j in range(i + 1):
+      matriz[i][j] = i + j
+
+  return matriz
 
 
-for l in range(tam):
-        for c in range(tam -l, tam):
-            m = matriz[l][c]
-            matriz[l][c] = "*"
-       
+def main():
+  """
+  Lê a entrada e imprime as matrizes de escada.
+  """
 
-for i in range(tam):
-    for j in range(tam ):
-        print(f'{matriz[i][j]}',end=' ')
+  n = int(input())
+  while n != 0:
+    matriz = construir_matriz(n)
+
+    for linha in matriz:
+      for elemento in linha:
+        print(f"{elemento:3}", end=" ")
+      print()
     print()
+
+    n = int(input())

@@ -1,24 +1,31 @@
-tam = 12
-matriz = []
+def construir_matriz(ordem):
+    if ordem == 0:
+        return []
 
-for i in range(tam):
-    linha = []
-    for j in range(tam):
-        linha.append('1')
-    matriz.append(linha)
+    # A linha abaixo utiliza uma lista de compreensão para criar a matriz com base na ordem fornecida.
+    # A expressão min(i, j, ordem-i-1, ordem-j-1) + 1 calcula o valor correspondente a cada posição da matriz,
+    # de acordo com a lógica desejada.
+    matriz = [[min(i, j, ordem-i-1, ordem-j-1) + 1 for j in range(ordem)] for i in range(ordem)]
+    return matriz
 
+# Este é um loop infinito que solicita entrada do usuário até que o valor inserido seja zero.
+while True:
+    # Converte a entrada do usuário para um número inteiro.
+    ordem = int(input())
+    
+    # Se a ordem for zero, encerra o loop.
+    if ordem == 0:
+        break
 
-for l in range(1,tam):
-     if l <= 5:
-        for c in range(tam - l, tam):
-            m = matriz[l][c]
-            matriz[l][c] = "*"
-     else:
-        for c in range(l+1,tam):
-            m = matriz[l][c]
-            matriz[l][c] = "*"
+    # Chama a função construir_matriz para criar a matriz com base na ordem fornecida.
+    matriz = construir_matriz(ordem)
 
-for i in range(tam):
-    for j in range(tam ):
-        print(f'{matriz[i][j]}',end=' ')
+    # Itera sobre cada linha da matriz e imprime os valores formatados conforme as especificações.
+    for linha in matriz:
+        # A expressão " ".join(f"{valor:2}" for valor in linha) cria uma string formatada
+        # para cada valor na linha, com um campo de tamanho 2 justificado à direita.
+        # Essas strings são então concatenadas com espaços entre elas.
+        print(" ".join(f"{valor:2}" for valor in linha))
+    
+    # Imprime uma linha em branco após a matriz.
     print()
