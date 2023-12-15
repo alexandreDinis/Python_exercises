@@ -9,7 +9,7 @@ for i in range(tam):
 
 
 for l in range(tam):
-        for c in range(tam -l, tam):
+        for c in range(l+1,tam):
             m = matriz[l][c]
             matriz[l][c] = "*"
        

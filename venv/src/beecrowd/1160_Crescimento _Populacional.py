@@ -1,39 +1,26 @@
-def crescimento_poulacao(valor,porcentagem):
-    
-    porcentagem = porcentagem / 100
-    valor_porcentagem = valor * porcentagem
-    valor_porcentagem = round(valor_porcentagem) /1
-
-    return valor_porcentagem
-
-
 t = int(input())
+for _ in range(0,t):
 
-tempo = 0
-
-for _ in range(t):
+    enter = input().split()
+    pa = int(enter[0])
+    pb = int(enter[1])
+    g1 = float(enter[2]) / 100
+    g2 = float(enter[3]) / 100
     
-    pa,pb,g1,g2 = input().split()
-    
-
-    con_pa = int(pa)
-    con_pb = int(pb)
-
+    tempo = 0
     while True:
-        
-        tempo += 1
-        cidade_a = crescimento_poulacao(con_pa,float(g1))
-        con_pa += cidade_a
-        cidade_b = crescimento_poulacao(int(con_pb),float(g2))
-        con_pb += cidade_b
-        
-        if tempo > 100:
-            print('Mais de 1 seculo.')
-            break
-        elif con_pa > con_pb:
-            print(f'{tempo} anos.')
+
+        pa += int(pa * g1)
+        pb += int(pb * g2)
+        tempo += 1 
+        if pa > pb or tempo > 100:
             break
 
-    con_pa=con_pb=cidade_a=cidade_b=tempo=0
+    if tempo <= 100:
+        print(f'{tempo} anos.')
+    else:
+        print('Mais de 1 seculo.')
+        
+   
 
 

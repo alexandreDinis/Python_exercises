@@ -1,32 +1,24 @@
-def crescimento_poulacao(valor,porcentagem):
-    
-    porcentagem = porcentagem / 100
-    valor_porcentagem = valor * porcentagem
-    valor_porcentagem = round(valor_porcentagem)
+tam = 12
+matriz = []
 
-    return valor_porcentagem
+for i in range(tam):
+    linha = []
+    for j in range(tam):
+        linha.append('1')
+    matriz.append(linha)
 
 
-t = int(input())
+for l in range(1,tam):
+     if l <= 5:
+        for c in range(tam - l, tam):
+            m = matriz[l][c]
+            matriz[l][c] = "*"
+     else:
+        for c in range(l+1,tam):
+            m = matriz[l][c]
+            matriz[l][c] = "*"
 
-tempo = 0
-
-for _ in range(t):
-    pa,pb,g1,g2 = input().split()
-    
-
-con_pa = int(pa)
-con_pb = int(pb)
-
-while True:
-     
-    cidade_a = crescimento_poulacao(int(pa),float(g1))
-    con_pa += cidade_a
-    cidade_b = crescimento_poulacao(int(pb),float(g2))
-    con_pb += cidade_b
-    tempo += 1
-        
-    if cidade_b < cidade_a:
-        print(f'{tempo} anos.')
-        print(cidade_a,cidade_b)
-        break
+for i in range(tam):
+    for j in range(tam ):
+        print(f'{matriz[i][j]}',end=' ')
+    print()
